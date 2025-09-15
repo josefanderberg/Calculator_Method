@@ -1,57 +1,53 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 class Program
 {
     static void Main(string[] args)
     {
 
-
-
-        Console.WriteLine("Skriv ditt första tal");
+        int sum = 0;
+        Console.WriteLine("Skriv ditt första heltal");
         int tal1 = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("Skriv ditt andra tal");
+        Console.WriteLine("Skriv ditt andra heltal");
         int tal2 = Convert.ToInt32(Console.ReadLine());
 
-                switch (Console.ReadLine())
+        Console.WriteLine("Välj räknesätt");
+
+        switch (Console.ReadLine())
         {
             case "+":
-                Addition(tal1, tal2);
+                sum = Addition(tal1, tal2);
                 break;
             case "-":
-                Subtraction(tal1, tal2);
+                sum = Subtraction(tal1, tal2);
                 break;
             case "*":
-                Multiplication(tal1, tal2);
+                sum= Multiplication(tal1, tal2);
                 break;
             case "/":
-                Division(tal1, tal2);
+                sum = Division(tal1, tal2);
                 break;
             default:
                 Console.WriteLine("Ogiltigt val");
                 break;
         }
-
-
-        int resultat = 0;
-        Console.WriteLine("Välj räknesätt");
-
-        Console.WriteLine("Resultatet är: " + resultat);
+        Console.WriteLine("Resultatet är: " + sum);
     }
-    private int Addition(int tal1, int tal2)
+    static int Addition(int tal1, int tal2)
     {
-        Console.WriteLine("This is an example method.");
         return tal1 + tal2;
     }
 
-    private int Subtraction(int tal1, int tal2)
+    static int Subtraction(int tal1, int tal2)
     {
         return tal1 - tal2;
     }
-    private int Multiplication(int tal1, int tal2)
+    static int Multiplication(int tal1, int tal2)
     {
-        return tal1 * tal2;
+        return tal1* tal2;
     }
-    private int Division(int tal1, int tal2)
+    static int Division(int tal1, int tal2)
     {
         return tal1 / tal2;
     }
