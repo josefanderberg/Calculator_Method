@@ -5,11 +5,6 @@ class Program
     static void Main(string[] args)
     {
 
-        int sum = 0;
-        Console.WriteLine("Skriv ditt första heltal");
-        int tal1 = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("Skriv ditt andra heltal");
-        int tal2 = Convert.ToInt32(Console.ReadLine());
 
         Console.WriteLine("Välj räknesätt");
         Console.WriteLine("1. Addition");
@@ -19,19 +14,26 @@ class Program
         
         int option = Convert.ToInt32(Console.ReadLine());
 
+        int sum = 0;
+        Console.WriteLine("Skriv ditt första heltal");
+        int tal1 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Skriv ditt andra heltal");
+        int tal2 = Convert.ToInt32(Console.ReadLine());
+
+
         switch (option)
         {
             case 1:
-                sum = Addition(tal1, tal2);
+                Addition(tal1, tal2);
                 break;
             case 2:
-                sum = Subtraction(tal1, tal2);
+                Subtraction(tal1, tal2);
                 break;
             case 3:
-                sum = Multiplication(tal1, tal2);
+                Multiplication(tal1, tal2);
                 break;
             case 4:
-                sum = Division(tal1, tal2);
+                Division(tal1, tal2);
                 break;
             default:
                 Console.WriteLine("Ogiltigt val");
@@ -41,19 +43,28 @@ class Program
     }
     static int Addition(int tal1, int tal2)
     {
-        return tal1 + tal2;
+        int sum = tal1 + tal2;
+        return sum;
     }
 
     static int Subtraction(int tal1, int tal2)
     {
-        return tal1 - tal2;
+        int sum = tal1 - tal2;
+        return sum;
     }
     static int Multiplication(int tal1, int tal2)
     {
-        return tal1* tal2;
+        int sum = tal1 * tal2;
+        return sum;        
     }
     static int Division(int tal1, int tal2)
     {
-        return tal1 / tal2;
+        if (tal2 == 0)
+        {
+            Console.WriteLine("Fel: Division med noll är inte tillåten.");
+            return 0; // eller hantera felet på annat sätt
+        }
+        int sum = tal1 / tal2;
+        return sum;
     }
 }

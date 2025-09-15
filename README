@@ -1,0 +1,29 @@
+# Calculator Console Application
+En enkel konsolapplikation skriven i C# som låter användaren utföra grundläggande matematiska operationer: addition, subtraktion, multiplikation och division.
+
+## Funktioner
+
+- **Addition**: Lägger ihop två heltal.
+- **Subtraktion**: Subtraherar det andra heltalet från det första.
+- **Multiplikation**: Multiplicerar två heltal.
+- **Division**: Dividerar det första heltalet med det andra (heltalsdivision).
+
+## Komma igång
+
+Följ dessa steg för att köra applikationen på din lokala maskin.
+
+### Förutsättningar
+
+- .NET SDK installerat på din dator. Du kan ladda ner det från [Microsofts officiella webbplats](https://dotnet.microsoft.com/).
+
+### Installation
+
+1. Klona detta repository eller kopiera källkoden till en lokal katalog.
+2. Öppna en terminal och navigera till katalogen där `Program.cs` finns.
+
+### Körning
+
+Kör följande kommando i terminalen för att köra applikationen:
+
+```bash
+dotnet run
