@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 
 class Program
 {
@@ -13,19 +12,25 @@ class Program
         int tal2 = Convert.ToInt32(Console.ReadLine());
 
         Console.WriteLine("Välj räknesätt");
+        Console.WriteLine("1. Addition");
+        Console.WriteLine("2. Subtraktion");
+        Console.WriteLine("3. Multiplikation");
+        Console.WriteLine("4. Division");
+        
+        int option = Convert.ToInt32(Console.ReadLine());
 
-        switch (Console.ReadLine())
+        switch (option)
         {
-            case "+":
+            case 1:
                 sum = Addition(tal1, tal2);
                 break;
-            case "-":
+            case 2:
                 sum = Subtraction(tal1, tal2);
                 break;
-            case "*":
-                sum= Multiplication(tal1, tal2);
+            case 3:
+                sum = Multiplication(tal1, tal2);
                 break;
-            case "/":
+            case 4:
                 sum = Division(tal1, tal2);
                 break;
             default:
