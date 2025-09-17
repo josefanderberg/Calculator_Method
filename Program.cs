@@ -4,7 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
-
+        int option;
+        int tal1;
+        int tal2;
         int sum = 0;
 
         // Välj räknesätt
@@ -14,27 +16,66 @@ class Program
         Console.WriteLine("3. Multiplikation");
         Console.WriteLine("4. Division");
         
-        int option = int.Parse(Console.ReadLine()!);
+        
+        while(true)
+        {
+            Console.Write("Ange ditt val (1-4): ");
+            if (int.TryParse(Console.ReadLine(), out option) && option >= 1 && option <= 4)
+            {
+                break;
+            }
+            else
+            {
+                Console.WriteLine("Ogiltigt val");
+            }
+        }
+        
+        while(true)
+        {
+            Console.WriteLine("Skriv ditt första heltal");
+            if (int.TryParse(Console.ReadLine(), out tal1))
+            {
+                break;
+            }
+            else
+            {
+                Console.WriteLine("Ogiltigt tal, försök igen.");
+            }
+        }
 
-        // Mata in tal
-        Console.WriteLine("Skriv ditt första heltal");
-        int tal1 = int.Parse(Console.ReadLine()!);
-        Console.WriteLine("Skriv ditt andra heltal");
-        int tal2 = int.Parse(Console.ReadLine()!);
+        while(true)
+        {
+            Console.WriteLine("Skriv ditt andra heltal");
+            if (int.TryParse(Console.ReadLine(), out tal2))
+            {
+                if (tal2 == 0)
+                {
+                Console.WriteLine("Fel: Division med noll är inte tillåten.");
+                }
+                else
+                {
+                break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Ogiltigt tal, försök igen.");
+            }
+        }
 
         switch (option)
         {
             case 1:
-                Addition(tal1, tal2);
+                sum = Addition(tal1, tal2);
                 break;
             case 2:
-                Subtraction(tal1, tal2);
+                sum = Subtraction(tal1, tal2);
                 break;
             case 3:
-                Multiplication(tal1, tal2);
+                sum = Multiplication(tal1, tal2);
                 break;
             case 4:
-                Division(tal1, tal2);
+                sum = Division(tal1, tal2);
                 break;
             default:
                 Console.WriteLine("Ogiltigt val");
@@ -61,12 +102,6 @@ class Program
     }
     static int Division(int tal1, int tal2)
     {
-        if (tal2 == 0)
-        {
-            //Hantera division med noll
-            Console.WriteLine("Fel: Division med noll är inte tillåten.");
-            return 0;
-        }
         int sum = tal1 / tal2;
         return sum;
     }
